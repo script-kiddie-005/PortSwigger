@@ -1,1 +1,33 @@
 
+## Objective
+- To analyze the authentication flow of the target application, identify weaknesses in credential handling, and successfully bypass authentication controls to gain unauthorized access.
+
+## Approach:
+
+- Analyzed the login functionality to understand request and response behavior.
+- Tested authentication parameters for common weaknesses such as predictable credentials and improper validation.
+- Leveraged manual testing techniques to confirm exploitability rather than relying solely on automated tools.
+- Validated successful authentication bypass through controlled interaction with the application.
+
+## Key Findings:
+
+- The application failed to properly enforce secure authentication checks.
+- Inadequate handling of authentication logic allowed unauthorized access.
+- The vulnerability highlights the importance of robust credential validation and secure authentication workflows.
+
+## Tools & Environment:
+
+- Burp Suite (manual request analysis and interception)
+- Web browser (application interaction)
+- Linux-based testing environment
+
+## Outcome:
+
+- The authentication weakness was successfully identified and exploited, resulting in unauthorized access to the application.
+- This lab reinforces the impact of weak authentication controls and the necessity of secure design practices.
+
+## Learning Takeaways
+
+- Authentication mechanisms are a critical attack surface in web applications.
+- Manual analysis is essential for understanding logic flaws beyond automated scanning.
+- Even simple authentication weaknesses can lead to complete compromise.
