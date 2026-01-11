@@ -1,0 +1,30 @@
+## Objective
+The objective of this lab was to identify and exploit weaknesses in the two-factor authentication (2FA) implementation, specifically focusing on logic flaws that allow authentication bypass without completing the second factor verification.
+
+## Approach
+- Analyzed the multi-step authentication workflow involving username, password, and 2FA
+- Observed how authentication state was managed across requests
+- Intercepted and manipulated requests during the login process
+- Tested whether access to authenticated resources was possible without completing the 2FA step
+- Validated whether server-side enforcement of 2FA was consistently applied
+
+## Key Findings
+- The application did not strictly enforce completion of the 2FA step before granting access
+- Authentication state could be reused or bypassed by directly accessing protected endpoints
+- The 2FA mechanism was implemented as a workflow step rather than a mandatory security control
+- This resulted in a complete bypass of the second authentication factor
+
+## Tools & Environment
+- Burp Suite (Proxy)
+- Web Browser
+
+## Outcome
+- Successfully bypassed the 2FA verification step
+- Gained authenticated access using only valid username and password
+- Demonstrated that the 2FA control was ineffective due to broken authentication logic
+
+## Learning Takeaways
+- 2FA must be enforced server-side and tied strictly to session state
+- Implementing 2FA as a UI step rather than a security requirement leads to bypass risks
+- Authentication workflows should be tested as a whole, not as isolated steps
+- A weak 2FA implementation can provide a false sense of security while offering no real protection
